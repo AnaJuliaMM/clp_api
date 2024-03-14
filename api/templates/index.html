@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CLP S7300</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>STATUS CLP S7300</h1>
+      <div class="info-container">
+        <p>Sensor: <span id="sensor"></span></p>
+        <p>Botão: <span id="button"></span></p>
+        <p>Ligar o robô: <span id="turn_on_robot"></span></p>
+        <p>Resetar contador: <span id="reset_counter"></span></p>
+        <p>Valor do contador: <span id="count_value"></span></p>
+      </div>
+      <figure class="img">
+        <img
+          src="https://www.arquimed.cl/educacion-superior/wp-content/uploads/2019/02/lab-automacao-bancada-didatica-rack-desktop-clp-s7-1500-auttom-7.png"
+          alt="S7 300"
+          height="300"
+        />
+      </figure>
+    </div>
+
+    <script>
+      // Variável data com as informações
+      const data = {
+        sensor: false,
+        button: false,
+        turn_on_robot: false,
+        reset_counter: false,
+        count_value: null,
+      };
+
+      // Atualizar as informações na página
+      document.getElementById("sensor").textContent = data.sensor
+        ? "Ligado"
+        : "Desligado";
+      document.getElementById("button").textContent = data.button
+        ? "Pressionado"
+        : "Não pressionado";
+      document.getElementById("turn_on_robot").textContent = data.turn_on_robot
+        ? "Sim"
+        : "Não";
+      document.getElementById("reset_counter").textContent = data.reset_counter
+        ? "Sim"
+        : "Não";
+      document.getElementById("count_value").textContent =
+        data.count_value !== null ? data.count_value : "Indisponível";
+    </script>
+  </body>
+</html>
