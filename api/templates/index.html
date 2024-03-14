@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CLP S7300</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>STATUS CLP S7300</h1>
+      <div class="info-container">
+        <p>Sensor: <span> {{data.sensor}}</span></p>
+        <p>Botão:<span> {{data.button}}</span></p>
+        <p>Ligar o robô: <span> {{data.turn_on_robot}}</span></p>
+        <p>Resetar contador: <span> {{data.reset_counter}}</span></p>
+        <p>Valor do contador: <span> {{data.count_value}}</span></p>
+      </div>
+      <figure class="img">
+        <img
+          src="https://www.arquimed.cl/educacion-superior/wp-content/uploads/2019/02/lab-automacao-bancada-didatica-rack-desktop-clp-s7-1500-auttom-7.png"
+          alt="S7 300"
+          height="300"
+        />
+      </figure>
+    </div>
+  </body>
+</html>
