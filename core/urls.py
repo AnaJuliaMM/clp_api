@@ -17,12 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from api.views import DeviceS7View
+from api.views import DeviceS7View, get_last
 
 router = DefaultRouter()
 router.register('', DeviceS7View )
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(router.urls))
+    path('api/', include(router.urls)),
+    path('last/', get_last)
 ]
