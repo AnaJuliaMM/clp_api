@@ -13,6 +13,6 @@ class DeviceS7View(viewsets.ModelViewSet):
     
 def get_last(request):
     queryset = DeviceS7.objects.last()
-    serializer = DeviceS7Serializer(queryset, many=False)
+    serializer = DeviceS7Serializer(queryset)
     data = serializer.data
     return render(request, 'index.html', {'data': data})
